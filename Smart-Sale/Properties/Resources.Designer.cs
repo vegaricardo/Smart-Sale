@@ -59,5 +59,15 @@ namespace Smart_Sale.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagesGDOR6QSV {
+            get {
+                object obj = ResourceManager.GetObject("imagesGDOR6QSV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
