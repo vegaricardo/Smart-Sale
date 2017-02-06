@@ -121,4 +121,38 @@
   <data name="imagesGDOR6QSV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagesGDOR6QSV.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tiendita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tiendita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="devut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\devut.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Visible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Visible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Invisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Invisible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alpura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alpura.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bimbo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bimbo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  
+  <data name="gamesa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gamesa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lala" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lala.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pepsi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pepsi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sabritas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sabritas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

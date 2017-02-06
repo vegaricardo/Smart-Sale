@@ -21,7 +21,7 @@ namespace Smart_Sale
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new MainView());
+            Application.Run(new Login());
         }
     }
 }

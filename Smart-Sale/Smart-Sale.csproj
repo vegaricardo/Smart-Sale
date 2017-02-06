@@ -44,6 +44,9 @@
     <Reference Include="DevExpress.XtraBars.v16.2" />
     <Reference Include="DevExpress.Sparkline.v16.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v16.2" />
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,6 +61,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,14 +81,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +107,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="i.ico" />
+    <None Include="Resources\sabritas.png" />
+    <None Include="Resources\pepsi.jpg" />
+    <None Include="Resources\lala.jpg" />
+    <None Include="Resources\gamesa.jpg" />
+    <None Include="Resources\coca.png" />
+    <None Include="Resources\bimbo.jpg" />
+    <None Include="Resources\alpura.jpg" />
+    <None Include="Resources\devut.jpg" />
+    <None Include="Resources\tiendita.png" />
+    <None Include="Resources\Invisible.png" />
+    <None Include="Resources\Visible.png" />
     <None Include="Resources\imagesGDOR6QSV.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
