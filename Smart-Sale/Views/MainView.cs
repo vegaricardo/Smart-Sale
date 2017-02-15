@@ -69,7 +69,7 @@ namespace Smart_Sale.Views
             }
         }
 
-        private void btnEnacePagina_ItemDoubleClick(object sender, ItemClickEventArgs e)
+        private void btnEnlacePagina_ItemDoubleClick(object sender, ItemClickEventArgs e)
         {
             Process.Start(btnEnlacePagina.Caption);
         }
