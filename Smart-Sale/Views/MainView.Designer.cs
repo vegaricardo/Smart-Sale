@@ -59,26 +59,26 @@
             this.XtraTabVentanas = new DevExpress.XtraTab.XtraTabControl();
             this.tabUsuarios = new DevExpress.XtraTab.XtraTabPage();
             this.tabProductos = new DevExpress.XtraTab.XtraTabPage();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.gpcProductos = new DevExpress.XtraEditors.GroupControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gdcProductos = new DevExpress.XtraGrid.GridControl();
+            this.gdvProductos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.calcEdit3 = new DevExpress.XtraEditors.CalcEdit();
-            this.calcEdit2 = new DevExpress.XtraEditors.CalcEdit();
-            this.calcEdit1 = new DevExpress.XtraEditors.CalcEdit();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAgregarProducto = new DevExpress.XtraEditors.SimpleButton();
+            this.cetPrecioVenta = new DevExpress.XtraEditors.CalcEdit();
+            this.cetPrecioCompra = new DevExpress.XtraEditors.CalcEdit();
+            this.cetExistencia = new DevExpress.XtraEditors.CalcEdit();
+            this.cbxProveedor = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbxDepartamento = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtDescripcion = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtCodigoBarra = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.TabVentas = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -138,21 +138,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.XtraTabVentanas)).BeginInit();
             this.XtraTabVentanas.SuspendLayout();
             this.tabProductos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gpcProductos)).BeginInit();
+            this.gpcProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdcProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cetPrecioVenta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cetPrecioCompra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cetExistencia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxProveedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxDepartamento.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodigoBarra.Properties)).BeginInit();
             this.TabVentas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.petPublicidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -429,72 +429,73 @@
             // 
             // tabProductos
             // 
-            this.tabProductos.Controls.Add(this.groupControl1);
+            this.tabProductos.Controls.Add(this.gpcProductos);
             this.tabProductos.Name = "tabProductos";
             this.tabProductos.Size = new System.Drawing.Size(1264, 501);
             this.tabProductos.Text = "Productos";
             // 
-            // groupControl1
+            // gpcProductos
             // 
-            this.groupControl1.Controls.Add(this.panelControl4);
-            this.groupControl1.Controls.Add(this.panelControl3);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1264, 501);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Datos de los Productos";
+            this.gpcProductos.Controls.Add(this.panelControl4);
+            this.gpcProductos.Controls.Add(this.panelControl3);
+            this.gpcProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gpcProductos.Location = new System.Drawing.Point(0, 0);
+            this.gpcProductos.Name = "gpcProductos";
+            this.gpcProductos.Size = new System.Drawing.Size(1264, 501);
+            this.gpcProductos.TabIndex = 0;
+            this.gpcProductos.Text = "Datos de los Productos";
             // 
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl4.Controls.Add(this.gridControl2);
+            this.panelControl4.Controls.Add(this.gdcProductos);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl4.Location = new System.Drawing.Point(480, 20);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(782, 479);
             this.panelControl4.TabIndex = 1;
             // 
-            // gridControl2
+            // gdcProductos
             // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gdcProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             gridLevelNode1.RelationName = "Level1";
             gridLevelNode2.RelationName = "Level2";
-            this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            this.gdcProductos.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1,
             gridLevelNode2});
-            this.gridControl2.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.MenuManager = this.ribbon;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(782, 479);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gdcProductos.Location = new System.Drawing.Point(0, 0);
+            this.gdcProductos.MainView = this.gdvProductos;
+            this.gdcProductos.MenuManager = this.ribbon;
+            this.gdcProductos.Name = "gdcProductos";
+            this.gdcProductos.Size = new System.Drawing.Size(782, 479);
+            this.gdcProductos.TabIndex = 0;
+            this.gdcProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gdvProductos});
             // 
-            // gridView2
+            // gdvProductos
             // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
+            this.gdvProductos.GridControl = this.gdcProductos;
+            this.gdvProductos.Name = "gdvProductos";
+            this.gdvProductos.OptionsBehavior.Editable = false;
             // 
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl3.Controls.Add(this.simpleButton2);
-            this.panelControl3.Controls.Add(this.simpleButton1);
-            this.panelControl3.Controls.Add(this.calcEdit3);
-            this.panelControl3.Controls.Add(this.calcEdit2);
-            this.panelControl3.Controls.Add(this.calcEdit1);
-            this.panelControl3.Controls.Add(this.comboBoxEdit2);
-            this.panelControl3.Controls.Add(this.comboBoxEdit1);
-            this.panelControl3.Controls.Add(this.textEdit3);
+            this.panelControl3.Controls.Add(this.btnCancelar);
+            this.panelControl3.Controls.Add(this.btnAgregarProducto);
+            this.panelControl3.Controls.Add(this.cetPrecioVenta);
+            this.panelControl3.Controls.Add(this.cetPrecioCompra);
+            this.panelControl3.Controls.Add(this.cetExistencia);
+            this.panelControl3.Controls.Add(this.cbxProveedor);
+            this.panelControl3.Controls.Add(this.cbxDepartamento);
+            this.panelControl3.Controls.Add(this.txtDescripcion);
             this.panelControl3.Controls.Add(this.labelControl18);
             this.panelControl3.Controls.Add(this.labelControl17);
             this.panelControl3.Controls.Add(this.labelControl16);
             this.panelControl3.Controls.Add(this.labelControl15);
             this.panelControl3.Controls.Add(this.labelControl14);
             this.panelControl3.Controls.Add(this.labelControl13);
-            this.panelControl3.Controls.Add(this.textEdit2);
+            this.panelControl3.Controls.Add(this.txtCodigoBarra);
             this.panelControl3.Controls.Add(this.labelControl12);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl3.Location = new System.Drawing.Point(2, 20);
@@ -502,103 +503,105 @@
             this.panelControl3.Size = new System.Drawing.Size(478, 479);
             this.panelControl3.TabIndex = 0;
             // 
-            // simpleButton2
+            // btnCancelar
             // 
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton2.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(109, 390);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(112, 52);
-            this.simpleButton2.TabIndex = 15;
-            this.simpleButton2.Text = "Cancelar";
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnCancelar.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(109, 390);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(112, 52);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // simpleButton1
+            // btnAgregarProducto
             // 
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(241, 390);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(112, 52);
-            this.simpleButton1.TabIndex = 14;
-            this.simpleButton1.Text = "Agregar";
+            this.btnAgregarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProducto.Image")));
+            this.btnAgregarProducto.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnAgregarProducto.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(241, 390);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(112, 52);
+            this.btnAgregarProducto.TabIndex = 14;
+            this.btnAgregarProducto.Text = "Agregar";
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
-            // calcEdit3
+            // cetPrecioVenta
             // 
-            this.calcEdit3.Location = new System.Drawing.Point(123, 287);
-            this.calcEdit3.MenuManager = this.ribbon;
-            this.calcEdit3.Name = "calcEdit3";
-            this.calcEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.calcEdit3.Properties.Appearance.Options.UseFont = true;
-            this.calcEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cetPrecioVenta.Location = new System.Drawing.Point(123, 287);
+            this.cetPrecioVenta.MenuManager = this.ribbon;
+            this.cetPrecioVenta.Name = "cetPrecioVenta";
+            this.cetPrecioVenta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.cetPrecioVenta.Properties.Appearance.Options.UseFont = true;
+            this.cetPrecioVenta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calcEdit3.Properties.Mask.BeepOnError = true;
-            this.calcEdit3.Properties.Mask.EditMask = "c";
-            this.calcEdit3.Size = new System.Drawing.Size(142, 24);
-            this.calcEdit3.TabIndex = 13;
+            this.cetPrecioVenta.Properties.Mask.BeepOnError = true;
+            this.cetPrecioVenta.Properties.Mask.EditMask = "c";
+            this.cetPrecioVenta.Size = new System.Drawing.Size(142, 24);
+            this.cetPrecioVenta.TabIndex = 13;
             // 
-            // calcEdit2
+            // cetPrecioCompra
             // 
-            this.calcEdit2.Location = new System.Drawing.Point(121, 247);
-            this.calcEdit2.MenuManager = this.ribbon;
-            this.calcEdit2.Name = "calcEdit2";
-            this.calcEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.calcEdit2.Properties.Appearance.Options.UseFont = true;
-            this.calcEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cetPrecioCompra.Location = new System.Drawing.Point(121, 247);
+            this.cetPrecioCompra.MenuManager = this.ribbon;
+            this.cetPrecioCompra.Name = "cetPrecioCompra";
+            this.cetPrecioCompra.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.cetPrecioCompra.Properties.Appearance.Options.UseFont = true;
+            this.cetPrecioCompra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calcEdit2.Properties.Mask.BeepOnError = true;
-            this.calcEdit2.Properties.Mask.EditMask = "c";
-            this.calcEdit2.Size = new System.Drawing.Size(142, 24);
-            this.calcEdit2.TabIndex = 12;
+            this.cetPrecioCompra.Properties.Mask.BeepOnError = true;
+            this.cetPrecioCompra.Properties.Mask.EditMask = "c";
+            this.cetPrecioCompra.Size = new System.Drawing.Size(142, 24);
+            this.cetPrecioCompra.TabIndex = 12;
             // 
-            // calcEdit1
+            // cetExistencia
             // 
-            this.calcEdit1.Location = new System.Drawing.Point(123, 205);
-            this.calcEdit1.MenuManager = this.ribbon;
-            this.calcEdit1.Name = "calcEdit1";
-            this.calcEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.calcEdit1.Properties.Appearance.Options.UseFont = true;
-            this.calcEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cetExistencia.Location = new System.Drawing.Point(123, 205);
+            this.cetExistencia.MenuManager = this.ribbon;
+            this.cetExistencia.Name = "cetExistencia";
+            this.cetExistencia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.cetExistencia.Properties.Appearance.Options.UseFont = true;
+            this.cetExistencia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calcEdit1.Properties.Mask.BeepOnError = true;
-            this.calcEdit1.Properties.Mask.EditMask = "c";
-            this.calcEdit1.Size = new System.Drawing.Size(142, 24);
-            this.calcEdit1.TabIndex = 11;
+            this.cetExistencia.Properties.Mask.BeepOnError = true;
+            this.cetExistencia.Properties.Mask.EditMask = "n0";
+            this.cetExistencia.Size = new System.Drawing.Size(142, 24);
+            this.cetExistencia.TabIndex = 11;
             // 
-            // comboBoxEdit2
+            // cbxProveedor
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(121, 163);
-            this.comboBoxEdit2.MenuManager = this.ribbon;
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.comboBoxEdit2.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbxProveedor.Location = new System.Drawing.Point(121, 163);
+            this.cbxProveedor.MenuManager = this.ribbon;
+            this.cbxProveedor.Name = "cbxProveedor";
+            this.cbxProveedor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.cbxProveedor.Properties.Appearance.Options.UseFont = true;
+            this.cbxProveedor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(318, 24);
-            this.comboBoxEdit2.TabIndex = 10;
+            this.cbxProveedor.Size = new System.Drawing.Size(318, 24);
+            this.cbxProveedor.TabIndex = 10;
             // 
-            // comboBoxEdit1
+            // cbxDepartamento
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(123, 119);
-            this.comboBoxEdit1.MenuManager = this.ribbon;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbxDepartamento.Location = new System.Drawing.Point(123, 119);
+            this.cbxDepartamento.MenuManager = this.ribbon;
+            this.cbxDepartamento.Name = "cbxDepartamento";
+            this.cbxDepartamento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.cbxDepartamento.Properties.Appearance.Options.UseFont = true;
+            this.cbxDepartamento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(318, 24);
-            this.comboBoxEdit1.TabIndex = 9;
+            this.cbxDepartamento.Size = new System.Drawing.Size(318, 24);
+            this.cbxDepartamento.TabIndex = 9;
             // 
-            // textEdit3
+            // txtDescripcion
             // 
-            this.textEdit3.Location = new System.Drawing.Point(123, 75);
-            this.textEdit3.MenuManager = this.ribbon;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Size = new System.Drawing.Size(320, 24);
-            this.textEdit3.TabIndex = 8;
+            this.txtDescripcion.Location = new System.Drawing.Point(123, 75);
+            this.txtDescripcion.MenuManager = this.ribbon;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtDescripcion.Properties.Appearance.Options.UseFont = true;
+            this.txtDescripcion.Size = new System.Drawing.Size(320, 24);
+            this.txtDescripcion.TabIndex = 8;
             // 
             // labelControl18
             // 
@@ -660,15 +663,15 @@
             this.labelControl13.TabIndex = 2;
             this.labelControl13.Text = "Descripción:\r\n";
             // 
-            // textEdit2
+            // txtCodigoBarra
             // 
-            this.textEdit2.Location = new System.Drawing.Point(123, 29);
-            this.textEdit2.MenuManager = this.ribbon;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Size = new System.Drawing.Size(320, 24);
-            this.textEdit2.TabIndex = 1;
+            this.txtCodigoBarra.Location = new System.Drawing.Point(123, 29);
+            this.txtCodigoBarra.MenuManager = this.ribbon;
+            this.txtCodigoBarra.Name = "txtCodigoBarra";
+            this.txtCodigoBarra.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtCodigoBarra.Properties.Appearance.Options.UseFont = true;
+            this.txtCodigoBarra.Size = new System.Drawing.Size(320, 24);
+            this.txtCodigoBarra.TabIndex = 1;
             // 
             // labelControl12
             // 
@@ -1245,22 +1248,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.XtraTabVentanas)).EndInit();
             this.XtraTabVentanas.ResumeLayout(false);
             this.tabProductos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gpcProductos)).EndInit();
+            this.gpcProductos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdcProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cetPrecioVenta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cetPrecioCompra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cetExistencia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxProveedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxDepartamento.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCodigoBarra.Properties)).EndInit();
             this.TabVentas.ResumeLayout(false);
             this.TabVentas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.petPublicidad.Properties)).EndInit();
@@ -1345,29 +1348,29 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.PictureEdit petPublicidad;
         private System.Windows.Forms.Timer tmpPublicidad;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl gpcProductos;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraEditors.CalcEdit calcEdit1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraGrid.GridControl gdcProductos;
+        private DevExpress.XtraGrid.Views.Grid.GridView gdvProductos;
+        private DevExpress.XtraEditors.CalcEdit cetExistencia;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxProveedor;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxDepartamento;
+        private DevExpress.XtraEditors.TextEdit txtDescripcion;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtCodigoBarra;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.CalcEdit calcEdit3;
-        private DevExpress.XtraEditors.CalcEdit calcEdit2;
+        private DevExpress.XtraEditors.SimpleButton btnCancelar;
+        private DevExpress.XtraEditors.SimpleButton btnAgregarProducto;
+        private DevExpress.XtraEditors.CalcEdit cetPrecioVenta;
+        private DevExpress.XtraEditors.CalcEdit cetPrecioCompra;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;

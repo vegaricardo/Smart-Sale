@@ -7,10 +7,14 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.LookAndFeel;
+using DevExpress.XtraEditors;
 using DevExpress.XtraTab.ViewInfo;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using System.Diagnostics;
+using Smart_Sale.Controller;
+
 namespace Smart_Sale.Views
 {
     public partial class MainView : RibbonForm
@@ -19,6 +23,11 @@ namespace Smart_Sale.Views
         {
             InitializeComponent();
         }
+
+        MainBridge llamarMainBridge = new MainBridge();
+
+        SmartClean llamarSmartClean = new SmartClean();
+
         //Nuevo numerode azar
         Random azar = new Random();
         private void tmpReloj_Tick(object sender, EventArgs e)
@@ -88,6 +97,10 @@ namespace Smart_Sale.Views
 
         private void btnMenuProductos_ItemClick(object sender, ItemClickEventArgs e)
         {
+            llamarMainBridge.leerProductos(gdcProductos);
+            llamarMainBridge.leerDepartamentos(cbxDepartamento);
+            llamarMainBridge.leerProveedores(cbxProveedor);    
+            
             tabProductos.PageVisible = true;
             XtraTabVentanas.SelectedTabPage = tabProductos;
         }
@@ -119,6 +132,25 @@ namespace Smart_Sale.Views
             {
                 tabUsuarios.PageVisible = false;
             }
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            bool resul = llamarMainBridge.altaProducto(Convert.ToInt64(txtCodigoBarra.Text), txtDescripcion.Text, cbxDepartamento.Text, cbxProveedor.Text, Convert.ToInt32(cetExistencia.Value), Convert.ToDecimal(cetPrecioCompra.Value), Convert.ToDecimal(cetPrecioVenta.Value));
+
+            if (resul)
+            {
+                //reajustar
+                llamarMainBridge.leerProductos(gdcProductos);
+                XtraMessageBox.Show(UserLookAndFeel.Default,"Si se clavo en la base de datos");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            llamarSmartClean.limpiarTextEdit(gpcProductos);
+            llamarSmartClean.restaurarComboBoxEdit(gpcProductos);
+            llamarSmartClean.restaurarCalcEdit(gpcProductos);
         }
     }
 }
