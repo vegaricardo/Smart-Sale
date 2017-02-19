@@ -170,6 +170,168 @@ namespace Smart_Sale.Model
             }
            
         }
+
+        #endregion
+
+        #region Ajustes
+        public void leerProveedoresListBox(ListBoxControl aRellenar)
+        {
+            try
+            {
+                using (cnn = new FbConnection(cadenaConexion))
+                {
+                    string query = " SELECT * FROM Proveedores";
+
+                    cnn.Open();
+
+                    cmd = new FbCommand(query, cnn);
+
+                    lector = cmd.ExecuteReader();
+
+                    aRellenar.Items.Clear();
+
+                    while (lector.Read())
+                    {
+                        aRellenar.Items.Add(lector[0].ToString());
+                    }
+                    lector.Close();
+                }
+            }
+            catch (Exception)
+            {
+                //falta por terminar                
+            }
+        }
+
+        public bool altaProveedores(string descripcion)
+        {
+                try
+                {
+                    using (cnn = new FbConnection(cadenaConexion))
+                    {
+                        string query = "INSERT INTO Proveedores VALUES( @descripcion)";
+
+                        cnn.Open();
+
+                        cmd = new FbCommand(query, cnn);
+
+                        cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                     
+
+                        int respuesta = cmd.ExecuteNonQuery();
+
+                        if (respuesta > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                        /// midifcar el mensaje
+                            DialogResult resul = llamarErrors.errorAltaProducto();
+
+                            if (resul == DialogResult.Retry)
+                            {
+                                altaProveedores( descripcion);
+                            }
+
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                //modificar el mensaje
+                    DialogResult resul = llamarErrors.errorAltaProductoCritico();
+
+                    if (resul == DialogResult.Retry)
+                    {
+                    altaProveedores(descripcion);
+                }
+
+                    return false;
+                
+            }
+        }
+
+        public void leerDepartamentosListBox(ListBoxControl aRellenar)
+        {
+            try
+            {
+                using (cnn = new FbConnection(cadenaConexion))
+                {
+                    string query = " SELECT * FROM Departamentos";
+
+                    cnn.Open();
+
+                    cmd = new FbCommand(query, cnn);
+
+                    lector = cmd.ExecuteReader();
+
+                    aRellenar.Items.Clear();
+
+                    while (lector.Read())
+                    {
+                        aRellenar.Items.Add(lector[0].ToString());
+                    }
+                    lector.Close();
+                }
+            }
+            catch (Exception)
+            {
+                //falta por terminar                
+            }
+        }
+
+        public bool altaDepartamentos(string descripcion)
+        {
+            try
+            {
+                using (cnn = new FbConnection(cadenaConexion))
+                {
+                    string query = "INSERT INTO Departamentos VALUES( @descripcion)";
+
+                    cnn.Open();
+
+                    cmd = new FbCommand(query, cnn);
+
+                    cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+
+                    int respuesta = cmd.ExecuteNonQuery();
+
+                    if (respuesta > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        /// midifcar el mensaje
+                        DialogResult resul = llamarErrors.errorAltaProducto();
+
+                        if (resul == DialogResult.Retry)
+                        {
+                            altaDepartamentos(descripcion);
+                        }
+
+                        return false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //modificar el mensaje
+                DialogResult resul = llamarErrors.errorAltaProductoCritico();
+
+                if (resul == DialogResult.Retry)
+                {
+                    altaDepartamentos(descripcion);
+                }
+
+                return false;
+
+            }
+        }
+
         
         #endregion
     }

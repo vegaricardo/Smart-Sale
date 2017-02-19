@@ -118,14 +118,14 @@
             this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.listBoxControl2 = new DevExpress.XtraEditors.ListBoxControl();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.btnAgregarProveedor = new DevExpress.XtraEditors.SimpleButton();
+            this.lbcProveedor = new DevExpress.XtraEditors.ListBoxControl();
+            this.txtProveedor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.btnAgregarDepartamento = new DevExpress.XtraEditors.SimpleButton();
+            this.lbcDepartamento = new DevExpress.XtraEditors.ListBoxControl();
+            this.txtDepartamento = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.tmpPublicidad = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -176,12 +176,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbcProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbcDepartamento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartamento.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -1120,9 +1120,9 @@
             // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.simpleButton4);
-            this.groupControl4.Controls.Add(this.listBoxControl2);
-            this.groupControl4.Controls.Add(this.textEdit5);
+            this.groupControl4.Controls.Add(this.btnAgregarProveedor);
+            this.groupControl4.Controls.Add(this.lbcProveedor);
+            this.groupControl4.Controls.Add(this.txtProveedor);
             this.groupControl4.Controls.Add(this.labelControl20);
             this.groupControl4.Location = new System.Drawing.Point(495, 23);
             this.groupControl4.Name = "groupControl4";
@@ -1130,31 +1130,37 @@
             this.groupControl4.TabIndex = 4;
             this.groupControl4.Text = "Proveedores";
             // 
-            // simpleButton4
+            // btnAgregarProveedor
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(355, 97);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton4.TabIndex = 1;
-            this.simpleButton4.Text = "Eliminar";
+            this.btnAgregarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarProveedor.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProveedor.Image")));
+            this.btnAgregarProveedor.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnAgregarProveedor.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(341, 106);
+            this.btnAgregarProveedor.Name = "btnAgregarProveedor";
+            this.btnAgregarProveedor.Size = new System.Drawing.Size(67, 30);
+            this.btnAgregarProveedor.TabIndex = 5;
+            this.btnAgregarProveedor.Text = "Agregar";
+            this.btnAgregarProveedor.Click += new System.EventHandler(this.btnAgregarProveedor_Click);
             // 
-            // listBoxControl2
+            // lbcProveedor
             // 
-            this.listBoxControl2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBoxControl2.Location = new System.Drawing.Point(8, 88);
-            this.listBoxControl2.Name = "listBoxControl2";
-            this.listBoxControl2.Size = new System.Drawing.Size(327, 151);
-            this.listBoxControl2.TabIndex = 3;
+            this.lbcProveedor.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbcProveedor.Location = new System.Drawing.Point(8, 88);
+            this.lbcProveedor.Name = "lbcProveedor";
+            this.lbcProveedor.Size = new System.Drawing.Size(327, 151);
+            this.lbcProveedor.SortOrder = System.Windows.Forms.SortOrder.Ascending;
+            this.lbcProveedor.TabIndex = 3;
             // 
-            // textEdit5
+            // txtProveedor
             // 
-            this.textEdit5.Location = new System.Drawing.Point(83, 32);
-            this.textEdit5.MenuManager = this.ribbon;
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.textEdit5.Properties.Appearance.Options.UseFont = true;
-            this.textEdit5.Size = new System.Drawing.Size(359, 24);
-            this.textEdit5.TabIndex = 2;
+            this.txtProveedor.Location = new System.Drawing.Point(83, 32);
+            this.txtProveedor.MenuManager = this.ribbon;
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtProveedor.Properties.Appearance.Options.UseFont = true;
+            this.txtProveedor.Size = new System.Drawing.Size(359, 24);
+            this.txtProveedor.TabIndex = 2;
             // 
             // labelControl20
             // 
@@ -1168,9 +1174,9 @@
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.simpleButton3);
-            this.groupControl3.Controls.Add(this.listBoxControl1);
-            this.groupControl3.Controls.Add(this.textEdit4);
+            this.groupControl3.Controls.Add(this.btnAgregarDepartamento);
+            this.groupControl3.Controls.Add(this.lbcDepartamento);
+            this.groupControl3.Controls.Add(this.txtDepartamento);
             this.groupControl3.Controls.Add(this.labelControl19);
             this.groupControl3.Location = new System.Drawing.Point(3, 23);
             this.groupControl3.Name = "groupControl3";
@@ -1178,31 +1184,36 @@
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Departamentos";
             // 
-            // simpleButton3
+            // btnAgregarDepartamento
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(354, 97);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 1;
-            this.simpleButton3.Text = "Eliminar";
+            this.btnAgregarDepartamento.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDepartamento.Image")));
+            this.btnAgregarDepartamento.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnAgregarDepartamento.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAgregarDepartamento.Location = new System.Drawing.Point(341, 97);
+            this.btnAgregarDepartamento.Name = "btnAgregarDepartamento";
+            this.btnAgregarDepartamento.Size = new System.Drawing.Size(67, 30);
+            this.btnAgregarDepartamento.TabIndex = 1;
+            this.btnAgregarDepartamento.Text = "Agregar";
+            this.btnAgregarDepartamento.Click += new System.EventHandler(this.btnAgregarDepartamento_Click);
             // 
-            // listBoxControl1
+            // lbcDepartamento
             // 
-            this.listBoxControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBoxControl1.Location = new System.Drawing.Point(8, 88);
-            this.listBoxControl1.Name = "listBoxControl1";
-            this.listBoxControl1.Size = new System.Drawing.Size(327, 151);
-            this.listBoxControl1.TabIndex = 3;
+            this.lbcDepartamento.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbcDepartamento.Location = new System.Drawing.Point(8, 88);
+            this.lbcDepartamento.Name = "lbcDepartamento";
+            this.lbcDepartamento.Size = new System.Drawing.Size(327, 151);
+            this.lbcDepartamento.SortOrder = System.Windows.Forms.SortOrder.Ascending;
+            this.lbcDepartamento.TabIndex = 3;
             // 
-            // textEdit4
+            // txtDepartamento
             // 
-            this.textEdit4.Location = new System.Drawing.Point(108, 32);
-            this.textEdit4.MenuManager = this.ribbon;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Size = new System.Drawing.Size(345, 24);
-            this.textEdit4.TabIndex = 2;
+            this.txtDepartamento.Location = new System.Drawing.Point(108, 32);
+            this.txtDepartamento.MenuManager = this.ribbon;
+            this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtDepartamento.Properties.Appearance.Options.UseFont = true;
+            this.txtDepartamento.Size = new System.Drawing.Size(345, 24);
+            this.txtDepartamento.TabIndex = 2;
             // 
             // labelControl19
             // 
@@ -1291,13 +1302,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbcProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbcDepartamento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartamento.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1373,14 +1384,13 @@
         private DevExpress.XtraEditors.CalcEdit cetPrecioCompra;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.ListBoxControl listBoxControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.ListBoxControl lbcProveedor;
+        private DevExpress.XtraEditors.TextEdit txtProveedor;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.ListBoxControl listBoxControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.SimpleButton btnAgregarDepartamento;
+        private DevExpress.XtraEditors.ListBoxControl lbcDepartamento;
+        private DevExpress.XtraEditors.TextEdit txtDepartamento;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.TextEdit textEdit7;
@@ -1401,5 +1411,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit4;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit11;
+        private DevExpress.XtraEditors.SimpleButton btnAgregarProveedor;
     }
 }

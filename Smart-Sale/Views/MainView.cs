@@ -85,6 +85,9 @@ namespace Smart_Sale.Views
 
         private void btnMenuAjustes_ItemClick(object sender, ItemClickEventArgs e)
         {
+            llamarMainBridge.leerProveedoresListBox(lbcProveedor);
+            llamarMainBridge.leerDepartamentosListBox(lbcDepartamento);
+        
             TabAjuste.PageVisible = true;
             XtraTabVentanas.SelectedTabPage = TabAjuste;
         }
@@ -151,6 +154,51 @@ namespace Smart_Sale.Views
             llamarSmartClean.limpiarTextEdit(gpcProductos);
             llamarSmartClean.restaurarComboBoxEdit(gpcProductos);
             llamarSmartClean.restaurarCalcEdit(gpcProductos);
+        }
+
+        private void btnAgregarDepartamento_Click(object sender, EventArgs e)
+        {
+            if (txtDepartamento.Text == "")
+            {
+                //mensaje que esta vacio
+            }
+            else
+            {
+               bool resul = llamarMainBridge.altaDepartamentos(txtDepartamento.Text);
+                if (resul)
+                {
+                    //mensaje de que si jalo
+                    llamarMainBridge.leerDepartamentosListBox(lbcDepartamento);
+                    txtDepartamento.Text = "";
+                }
+                else
+                {
+                    //mensaje de que no jalo
+                }
+            }
+        }
+
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+            if (txtProveedor.Text == "")
+            {
+                //mensaje que esta vacio
+            }
+            else
+            {
+                bool resul = llamarMainBridge.altaProveedores(txtProveedor.Text);
+                if (resul)
+                {
+                    //mensaje de que si jalo
+                    llamarMainBridge.leerProveedoresListBox(lbcProveedor);
+                    txtProveedor.Text = "";
+                }
+                else
+                {
+                    //mensaje de que no jalo
+                }
+            }
+
         }
     }
 }
