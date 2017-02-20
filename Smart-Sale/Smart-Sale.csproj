@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\MainBridge.cs" />
-    <Compile Include="Controller\SmartClean.cs" />
     <Compile Include="Errors\Errores.cs" />
     <Compile Include="Messages\Mensajes.cs" />
     <Compile Include="Model\CRUDM.cs" />

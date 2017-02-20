@@ -8,12 +8,36 @@ using DevExpress.XtraEditors;
 using System.Windows.Forms;
 using DevExpress.XtraGrid;
 using Smart_Sale.Model;
+using System.Drawing;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace Smart_Sale.Controller// 58:38:56
 {
     class MainBridge
     {
         CRUDM llamarCRUDM = new CRUDM();
+
+        private Image RehacerImagen( byte[] datos)
+        {
+            MemoryStream ms = new MemoryStream(datos);
+
+            Image imagen = Image.FromStream(ms);
+
+            return imagen;
+
+        }
+
+        private byte[] ConvertirFoto(Image foto)
+        {
+            MemoryStream ms = new MemoryStream();
+
+            foto.Save(ms, ImageFormat.Png);
+
+            byte[] datos = ms.GetBuffer();
+
+            return datos;
+        }
 
         #region CRUD Productos
 
@@ -61,6 +85,25 @@ namespace Smart_Sale.Controller// 58:38:56
             return llamarCRUDM.altaDepartamentos(descripcion);
         }
 
+        #endregion
+
+        #region CRUD Usuarios
+        public void leerUsuarios(GridControl aRellenar)
+        {
+            llamarCRUDM.leerUsuarios(aRellenar);
+        }
+
+
+        public bool altaUsuario(string usuario, string contrasena, string correo, string pregunta, string respuesta, string privilegio, Image foto)
+        {
+            byte[] datos = null;
+
+            if (foto != null)
+            {
+                datos = ConvertirFoto(foto);
+            }
+            return llamarCRUDM.altaUsuario(usuario, contrasena, correo, pregunta, respuesta, privilegio, datos);
+        }
         #endregion
 
     }

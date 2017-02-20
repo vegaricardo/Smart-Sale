@@ -11,10 +11,14 @@ using Smart_Sale.Errors;
 using System.Windows.Forms;
 using Smart_Sale.Messages;
 using DevExpress.XtraGrid;
+using System.Security.Cryptography;
+using System.Drawing;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace Smart_Sale.Model
 {
-   
+
     class CRUDM
     {
         Errores llamarErrors = new Errores();// aki llamamos el metodo de errores
@@ -25,14 +29,39 @@ namespace Smart_Sale.Model
         FbCommand cmd;
         FbDataAdapter adaptador;
         FbDataReader lector;
-        DataTable datos;      // objetos con que realizamos la conecxion a la bd
+        DataTable datos;
+        private string Encriptar(string aEncriptar, HashAlgorithm algoritmo)
+        {
+            try
+            {
+                byte[] convertir = Encoding.UTF8.GetBytes(aEncriptar);
+
+                byte[] convertido = algoritmo.ComputeHash(convertir);
+
+                StringBuilder forzar = new StringBuilder();
+
+                for (int i = 0; i < convertido.Length; i++)
+                {
+                    forzar.Append(convertido[i].ToString("x2").ToLower());
+                }
+                return forzar.ToString();
+            }
+            catch (Exception)
+            {
+
+                //falta mensaje
+                return null;
+            }
+        }
+
+        // objetos con que realizamos la conecxion a la bd
         #region CRUD Productos
 
         public void leerProductos(GridControl aRellenar)
         {
             try
             {
-                using (cnn = new FbConnection(cadenaConexion)) 
+                using (cnn = new FbConnection(cadenaConexion))
                 {
                     string query = "SELECT * FROM Productos ";
 
@@ -62,7 +91,7 @@ namespace Smart_Sale.Model
         {
             try
             {
-                using ( cnn = new FbConnection(cadenaConexion))
+                using (cnn = new FbConnection(cadenaConexion))
                 {
                     string query = " SELECT * FROM Proveedores";
 
@@ -168,11 +197,12 @@ namespace Smart_Sale.Model
 
                 return false;
             }
-           
+
         }
 
-        #endregion
-
+        #endregion//No haremos el codigo de smartclean porque vitor lo elimino se hizo mole
+        //Tampoco haremos el boton de eliminar el departamentos y proveedores
+        //haremos el metodo crud directamente en el model por que vitor se equivoca a cada rato.
         #region Ajustes
         public void leerProveedoresListBox(ListBoxControl aRellenar)
         {
@@ -205,51 +235,51 @@ namespace Smart_Sale.Model
 
         public bool altaProveedores(string descripcion)
         {
-                try
+            try
+            {
+                using (cnn = new FbConnection(cadenaConexion))
                 {
-                    using (cnn = new FbConnection(cadenaConexion))
+                    string query = "INSERT INTO Proveedores VALUES( @descripcion)";
+
+                    cnn.Open();
+
+                    cmd = new FbCommand(query, cnn);
+
+                    cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+
+                    int respuesta = cmd.ExecuteNonQuery();
+
+                    if (respuesta > 0)
                     {
-                        string query = "INSERT INTO Proveedores VALUES( @descripcion)";
-
-                        cnn.Open();
-
-                        cmd = new FbCommand(query, cnn);
-
-                        cmd.Parameters.AddWithValue("@descripcion", descripcion);
-                     
-
-                        int respuesta = cmd.ExecuteNonQuery();
-
-                        if (respuesta > 0)
-                        {
-                            return true;
-                        }
-                        else
-                        {
+                        return true;
+                    }
+                    else
+                    {
                         /// midifcar el mensaje
-                            DialogResult resul = llamarErrors.errorAltaProducto();
+                        DialogResult resul = llamarErrors.errorAltaProducto();
 
-                            if (resul == DialogResult.Retry)
-                            {
-                                altaProveedores( descripcion);
-                            }
-
-                            return false;
+                        if (resul == DialogResult.Retry)
+                        {
+                            altaProveedores(descripcion);
                         }
+
+                        return false;
                     }
                 }
-                catch (Exception)
-                {
+            }
+            catch (Exception)
+            {
                 //modificar el mensaje
-                    DialogResult resul = llamarErrors.errorAltaProductoCritico();
+                DialogResult resul = llamarErrors.errorAltaProductoCritico();
 
-                    if (resul == DialogResult.Retry)
-                    {
+                if (resul == DialogResult.Retry)
+                {
                     altaProveedores(descripcion);
                 }
 
-                    return false;
-                
+                return false;
+
             }
         }
 
@@ -332,7 +362,147 @@ namespace Smart_Sale.Model
             }
         }
 
-        
+
+        #endregion
+
+        #region CRUD Usuarios
+        public void leerUsuarios(GridControl aRellenar)
+        {
+            try
+            {
+                using (cnn = new FbConnection(cadenaConexion))
+                {
+                    string query = "SELECT IDU, Correo, Privilegio FROM Usuarios ";
+
+                    cnn.Open();
+
+                    cmd = new FbCommand(query, cnn);
+
+                    datos = new DataTable();
+
+                    adaptador = new FbDataAdapter(cmd);
+
+                    adaptador.Fill(datos);
+
+                    aRellenar.DataSource = datos;
+
+                    cmd.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                //falta mensaje
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public bool altaUsuario( string usuario, string contrasena, string correo, string pregunta, string respuesta, string privilegio, byte [] foto) // variables de la bd
+        {
+            try
+            {
+                using (cnn = new FbConnection(cadenaConexion))
+                {
+                    string query = "INSERT INTO Usuarios VALUES(@id, @usuario, @contrasena, @correo, @pregunta, @respuesta, @privilegio, @foto)";
+
+                    int id = obtenerUltimoUsuario();
+
+                    cnn.Open();
+
+                    cmd = new FbCommand(query, cnn);
+
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@usuario", Encriptar(usuario, new SHA512CryptoServiceProvider()));
+                    cmd.Parameters.AddWithValue("@contrasena", Encriptar(contrasena, new SHA512CryptoServiceProvider()));
+                    cmd.Parameters.AddWithValue("@correo", correo);
+                    cmd.Parameters.AddWithValue("@pregunta", Encriptar(pregunta, new SHA512CryptoServiceProvider()));
+                    cmd.Parameters.AddWithValue("@respuesta", Encriptar(respuesta, new SHA512CryptoServiceProvider()));
+                    cmd.Parameters.AddWithValue("@privilegio", privilegio);
+                    cmd.Parameters.AddWithValue("@foto", foto);
+
+
+                    int respuesta2 = cmd.ExecuteNonQuery();
+
+                    if (respuesta2 > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        //falta mensaje
+                        DialogResult resul = llamarErrors.errorAltaProducto();
+
+                        if (resul == DialogResult.Retry)
+                        {
+                            altaUsuario( usuario, contrasena, correo, pregunta, respuesta, privilegio, foto);
+                        }
+
+                        return false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //falta mensaje
+                DialogResult resul = llamarErrors.errorAltaProductoCritico();
+
+                if (resul == DialogResult.Retry)
+                {
+                    altaUsuario( usuario, contrasena, correo, pregunta, respuesta, privilegio, foto);
+                }
+
+                return false;
+            }
+
+        }
+
+        private int obtenerUltimoUsuario()
+        {
+            try
+            {
+                using (cnn = new FbConnection(cadenaConexion))
+                {
+                    string query = "SELECT MAX(IDU) FROM Usuarios";
+
+                    cnn.Open();
+
+                    cmd = new FbCommand(query, cnn);
+
+                    lector = cmd.ExecuteReader();
+
+                    string codigo = null;
+
+                    int ncodigo = 0;
+
+                    while (lector.Read())
+                    {
+                        codigo = lector[0].ToString();
+                    }
+                    lector.Close();
+
+                    if (codigo == null || codigo == "")
+                    {
+                        ncodigo = 1;
+                    }
+                    else
+                    {
+                        ncodigo = Convert.ToInt32(codigo) + 1;
+                    }
+                    return ncodigo;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                //falta mensaje
+                MessageBox.Show(ex.ToString());
+
+                return 0;
+            }
+          
+        }
+  
+
         #endregion
     }
 }

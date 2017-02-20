@@ -26,7 +26,7 @@ namespace Smart_Sale.Views
 
         MainBridge llamarMainBridge = new MainBridge();
 
-        SmartClean llamarSmartClean = new SmartClean();
+        
 
         //Nuevo numerode azar
         Random azar = new Random();
@@ -94,6 +94,8 @@ namespace Smart_Sale.Views
 
         private void btnMenuUsuarios_ItemClick(object sender, ItemClickEventArgs e)
         {
+            llamarMainBridge.leerUsuarios(gdcUsuarios);
+
             tabUsuarios.PageVisible = true;
             XtraTabVentanas.SelectedTabPage = tabUsuarios;
         }
@@ -102,7 +104,9 @@ namespace Smart_Sale.Views
         {
             llamarMainBridge.leerProductos(gdcProductos);
             llamarMainBridge.leerDepartamentos(cbxDepartamento);
-            llamarMainBridge.leerProveedores(cbxProveedor);    
+            llamarMainBridge.leerProveedores(cbxProveedor);
+
+            restaurarProductos();   
             
             tabProductos.PageVisible = true;
             XtraTabVentanas.SelectedTabPage = tabProductos;
@@ -151,9 +155,7 @@ namespace Smart_Sale.Views
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            llamarSmartClean.limpiarTextEdit(gpcProductos);
-            llamarSmartClean.restaurarComboBoxEdit(gpcProductos);
-            llamarSmartClean.restaurarCalcEdit(gpcProductos);
+            restaurarProductos();
         }
 
         private void btnAgregarDepartamento_Click(object sender, EventArgs e)
@@ -199,6 +201,65 @@ namespace Smart_Sale.Views
                 }
             }
 
+        }
+
+        #region Limpieza
+
+        private void restaurarProductos()
+        {
+            txtCodigoBarra.Text = "";
+            txtDescripcion.Text = "";
+            cbxDepartamento.SelectedIndex = 0;
+            cbxProveedor.SelectedIndex = 0;
+            cetExistencia.Value = 0;
+            cetPrecioCompra.Value = 0;
+            cetPrecioVenta.Value = 0;
+
+
+            llamarMainBridge.leerProductos(gdcProductos);
+        }
+
+
+
+        #endregion
+
+        private void petVerContrasena_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtContrasena.Properties.PasswordChar = '\0';
+            txtRContrasena.Properties.PasswordChar = '\0';
+        }
+
+        private void petVerContrasena_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtContrasena.Properties.PasswordChar = '•';
+            txtRContrasena.Properties.PasswordChar = '•';
+        }
+
+        private void btnAgregarUsuarios_Click(object sender, EventArgs e)
+        {
+
+            if (txtContrasena.Text == txtRContrasena.Text)
+            {
+                if (txtUsuario.Text == "" || txtEmail.Text == "" || txtPregunta.Text == "" || txtRespuesta.Text == "" || cbxPrivilegio.SelectedIndex < 0)
+                {
+                    //nos falta mensaje porque vitor tenia sueño
+                }
+                else
+                {
+
+                    bool resul = llamarMainBridge.altaUsuario(txtUsuario.Text, txtContrasena.Text, txtEmail.Text, txtPregunta.Text, txtRespuesta.Text, cbxPrivilegio.Text, petFotoUsuario.Image);
+                    if (resul)
+                    {
+                        //reajustar
+                        llamarMainBridge.leerUsuarios(gdcUsuarios);
+                        XtraMessageBox.Show(UserLookAndFeel.Default, "Si se clavo en la base de datos");
+                    }
+                }
+            }
+            else
+            {
+                //nos falta mensaje porque vitor tenia sueño
+            }
         }
     }
 }

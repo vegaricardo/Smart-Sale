@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -58,6 +56,29 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.XtraTabVentanas = new DevExpress.XtraTab.XtraTabControl();
             this.tabUsuarios = new DevExpress.XtraTab.XtraTabPage();
+            this.gpcUsuarios = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.gdcUsuarios = new DevExpress.XtraGrid.GridControl();
+            this.gdvUsuarios = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.petFotoUsuario = new DevExpress.XtraEditors.PictureEdit();
+            this.petVerContrasena = new DevExpress.XtraEditors.PictureEdit();
+            this.cbxPrivilegio = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtRespuesta = new DevExpress.XtraEditors.TextEdit();
+            this.txtPregunta = new DevExpress.XtraEditors.TextEdit();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.txtRContrasena = new DevExpress.XtraEditors.TextEdit();
+            this.txtContrasena = new DevExpress.XtraEditors.TextEdit();
+            this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
+            this.btnCancelarUsuarios = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAgregarUsuarios = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
             this.tabProductos = new DevExpress.XtraTab.XtraTabPage();
             this.gpcProductos = new DevExpress.XtraEditors.GroupControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -137,6 +158,24 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.XtraTabVentanas)).BeginInit();
             this.XtraTabVentanas.SuspendLayout();
+            this.tabUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gpcUsuarios)).BeginInit();
+            this.gpcUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdcUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
+            this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.petFotoUsuario.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petVerContrasena.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxPrivilegio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRespuesta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPregunta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRContrasena.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             this.tabProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gpcProductos)).BeginInit();
             this.gpcProductos.SuspendLayout();
@@ -423,9 +462,280 @@
             // 
             // tabUsuarios
             // 
+            this.tabUsuarios.Controls.Add(this.gpcUsuarios);
             this.tabUsuarios.Name = "tabUsuarios";
             this.tabUsuarios.Size = new System.Drawing.Size(1264, 501);
             this.tabUsuarios.Text = "Usuarios";
+            // 
+            // gpcUsuarios
+            // 
+            this.gpcUsuarios.Controls.Add(this.panelControl5);
+            this.gpcUsuarios.Controls.Add(this.panelControl6);
+            this.gpcUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gpcUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.gpcUsuarios.Name = "gpcUsuarios";
+            this.gpcUsuarios.Size = new System.Drawing.Size(1264, 501);
+            this.gpcUsuarios.TabIndex = 1;
+            this.gpcUsuarios.Text = "Datos de los Usuarios";
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl5.Controls.Add(this.gdcUsuarios);
+            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl5.Location = new System.Drawing.Point(480, 20);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(782, 479);
+            this.panelControl5.TabIndex = 1;
+            // 
+            // gdcUsuarios
+            // 
+            this.gdcUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gdcUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.gdcUsuarios.MainView = this.gdvUsuarios;
+            this.gdcUsuarios.MenuManager = this.ribbon;
+            this.gdcUsuarios.Name = "gdcUsuarios";
+            this.gdcUsuarios.Size = new System.Drawing.Size(782, 479);
+            this.gdcUsuarios.TabIndex = 0;
+            this.gdcUsuarios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gdvUsuarios});
+            // 
+            // gdvUsuarios
+            // 
+            this.gdvUsuarios.GridControl = this.gdcUsuarios;
+            this.gdvUsuarios.Name = "gdvUsuarios";
+            this.gdvUsuarios.OptionsBehavior.Editable = false;
+            // 
+            // panelControl6
+            // 
+            this.panelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl6.Controls.Add(this.petFotoUsuario);
+            this.panelControl6.Controls.Add(this.petVerContrasena);
+            this.panelControl6.Controls.Add(this.cbxPrivilegio);
+            this.panelControl6.Controls.Add(this.txtRespuesta);
+            this.panelControl6.Controls.Add(this.txtPregunta);
+            this.panelControl6.Controls.Add(this.txtEmail);
+            this.panelControl6.Controls.Add(this.txtRContrasena);
+            this.panelControl6.Controls.Add(this.txtContrasena);
+            this.panelControl6.Controls.Add(this.txtUsuario);
+            this.panelControl6.Controls.Add(this.btnCancelarUsuarios);
+            this.panelControl6.Controls.Add(this.btnAgregarUsuarios);
+            this.panelControl6.Controls.Add(this.labelControl30);
+            this.panelControl6.Controls.Add(this.labelControl31);
+            this.panelControl6.Controls.Add(this.labelControl32);
+            this.panelControl6.Controls.Add(this.labelControl33);
+            this.panelControl6.Controls.Add(this.labelControl34);
+            this.panelControl6.Controls.Add(this.labelControl35);
+            this.panelControl6.Controls.Add(this.labelControl36);
+            this.panelControl6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl6.Location = new System.Drawing.Point(2, 20);
+            this.panelControl6.Name = "panelControl6";
+            this.panelControl6.Size = new System.Drawing.Size(478, 479);
+            this.panelControl6.TabIndex = 0;
+            // 
+            // petFotoUsuario
+            // 
+            this.petFotoUsuario.Cursor = System.Windows.Forms.Cursors.Default;
+            this.petFotoUsuario.Location = new System.Drawing.Point(23, 336);
+            this.petFotoUsuario.MenuManager = this.ribbon;
+            this.petFotoUsuario.Name = "petFotoUsuario";
+            this.petFotoUsuario.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.petFotoUsuario.Properties.Appearance.Options.UseBackColor = true;
+            this.petFotoUsuario.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.petFotoUsuario.Properties.ZoomAccelerationFactor = 1D;
+            this.petFotoUsuario.Size = new System.Drawing.Size(100, 128);
+            this.petFotoUsuario.TabIndex = 24;
+            // 
+            // petVerContrasena
+            // 
+            this.petVerContrasena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.petVerContrasena.Cursor = System.Windows.Forms.Cursors.Default;
+            this.petVerContrasena.EditValue = global::Smart_Sale.Properties.Resources.Visible;
+            this.petVerContrasena.Location = new System.Drawing.Point(403, 82);
+            this.petVerContrasena.Name = "petVerContrasena";
+            this.petVerContrasena.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.petVerContrasena.Properties.Appearance.Options.UseBackColor = true;
+            this.petVerContrasena.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.petVerContrasena.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.petVerContrasena.Properties.ShowMenu = false;
+            this.petVerContrasena.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.petVerContrasena.Properties.ZoomAccelerationFactor = 1D;
+            this.petVerContrasena.Size = new System.Drawing.Size(21, 22);
+            this.petVerContrasena.TabIndex = 23;
+            this.petVerContrasena.MouseDown += new System.Windows.Forms.MouseEventHandler(this.petVerContrasena_MouseDown);
+            this.petVerContrasena.MouseUp += new System.Windows.Forms.MouseEventHandler(this.petVerContrasena_MouseUp);
+            // 
+            // cbxPrivilegio
+            // 
+            this.cbxPrivilegio.EditValue = "Gerente";
+            this.cbxPrivilegio.Location = new System.Drawing.Point(117, 287);
+            this.cbxPrivilegio.MenuManager = this.ribbon;
+            this.cbxPrivilegio.Name = "cbxPrivilegio";
+            this.cbxPrivilegio.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.cbxPrivilegio.Properties.Appearance.Options.UseFont = true;
+            this.cbxPrivilegio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxPrivilegio.Properties.Items.AddRange(new object[] {
+            "Gerente",
+            "Cajero"});
+            this.cbxPrivilegio.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbxPrivilegio.Size = new System.Drawing.Size(322, 24);
+            this.cbxPrivilegio.TabIndex = 22;
+            // 
+            // txtRespuesta
+            // 
+            this.txtRespuesta.Location = new System.Drawing.Point(117, 246);
+            this.txtRespuesta.MenuManager = this.ribbon;
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtRespuesta.Properties.Appearance.Options.UseFont = true;
+            this.txtRespuesta.Size = new System.Drawing.Size(322, 24);
+            this.txtRespuesta.TabIndex = 21;
+            // 
+            // txtPregunta
+            // 
+            this.txtPregunta.Location = new System.Drawing.Point(117, 206);
+            this.txtPregunta.MenuManager = this.ribbon;
+            this.txtPregunta.Name = "txtPregunta";
+            this.txtPregunta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtPregunta.Properties.Appearance.Options.UseFont = true;
+            this.txtPregunta.Size = new System.Drawing.Size(322, 24);
+            this.txtPregunta.TabIndex = 20;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(117, 159);
+            this.txtEmail.MenuManager = this.ribbon;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtEmail.Properties.Appearance.Options.UseFont = true;
+            this.txtEmail.Size = new System.Drawing.Size(322, 24);
+            this.txtEmail.TabIndex = 19;
+            // 
+            // txtRContrasena
+            // 
+            this.txtRContrasena.Location = new System.Drawing.Point(117, 119);
+            this.txtRContrasena.MenuManager = this.ribbon;
+            this.txtRContrasena.Name = "txtRContrasena";
+            this.txtRContrasena.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtRContrasena.Properties.Appearance.Options.UseFont = true;
+            this.txtRContrasena.Properties.PasswordChar = '•';
+            this.txtRContrasena.Size = new System.Drawing.Size(251, 24);
+            this.txtRContrasena.TabIndex = 18;
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(117, 79);
+            this.txtContrasena.MenuManager = this.ribbon;
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtContrasena.Properties.Appearance.Options.UseFont = true;
+            this.txtContrasena.Properties.PasswordChar = '•';
+            this.txtContrasena.Size = new System.Drawing.Size(251, 24);
+            this.txtContrasena.TabIndex = 17;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(117, 36);
+            this.txtUsuario.MenuManager = this.ribbon;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.txtUsuario.Properties.Appearance.Options.UseFont = true;
+            this.txtUsuario.Size = new System.Drawing.Size(322, 24);
+            this.txtUsuario.TabIndex = 16;
+            // 
+            // btnCancelarUsuarios
+            // 
+            this.btnCancelarUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarUsuarios.Image")));
+            this.btnCancelarUsuarios.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnCancelarUsuarios.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnCancelarUsuarios.Location = new System.Drawing.Point(163, 390);
+            this.btnCancelarUsuarios.Name = "btnCancelarUsuarios";
+            this.btnCancelarUsuarios.Size = new System.Drawing.Size(112, 52);
+            this.btnCancelarUsuarios.TabIndex = 15;
+            this.btnCancelarUsuarios.Text = "Cancelar";
+            // 
+            // btnAgregarUsuarios
+            // 
+            this.btnAgregarUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarUsuarios.Image")));
+            this.btnAgregarUsuarios.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnAgregarUsuarios.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAgregarUsuarios.Location = new System.Drawing.Point(299, 390);
+            this.btnAgregarUsuarios.Name = "btnAgregarUsuarios";
+            this.btnAgregarUsuarios.Size = new System.Drawing.Size(112, 52);
+            this.btnAgregarUsuarios.TabIndex = 14;
+            this.btnAgregarUsuarios.Text = "Agregar";
+            this.btnAgregarUsuarios.Click += new System.EventHandler(this.btnAgregarUsuarios_Click);
+            // 
+            // labelControl30
+            // 
+            this.labelControl30.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.labelControl30.Appearance.Options.UseFont = true;
+            this.labelControl30.Location = new System.Drawing.Point(23, 126);
+            this.labelControl30.Name = "labelControl30";
+            this.labelControl30.Size = new System.Drawing.Size(88, 17);
+            this.labelControl30.TabIndex = 7;
+            this.labelControl30.Text = "R.Contraseña:";
+            // 
+            // labelControl31
+            // 
+            this.labelControl31.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.labelControl31.Appearance.Options.UseFont = true;
+            this.labelControl31.Location = new System.Drawing.Point(43, 249);
+            this.labelControl31.Name = "labelControl31";
+            this.labelControl31.Size = new System.Drawing.Size(68, 17);
+            this.labelControl31.TabIndex = 6;
+            this.labelControl31.Text = "Respuesta:";
+            // 
+            // labelControl32
+            // 
+            this.labelControl32.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.labelControl32.Appearance.Options.UseFont = true;
+            this.labelControl32.Location = new System.Drawing.Point(54, 287);
+            this.labelControl32.Name = "labelControl32";
+            this.labelControl32.Size = new System.Drawing.Size(57, 17);
+            this.labelControl32.TabIndex = 5;
+            this.labelControl32.Text = "Privilegio:";
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.labelControl33.Appearance.Options.UseFont = true;
+            this.labelControl33.Location = new System.Drawing.Point(72, 166);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(39, 17);
+            this.labelControl33.TabIndex = 4;
+            this.labelControl33.Text = "E-Mail:";
+            // 
+            // labelControl34
+            // 
+            this.labelControl34.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.labelControl34.Appearance.Options.UseFont = true;
+            this.labelControl34.Location = new System.Drawing.Point(50, 209);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(61, 17);
+            this.labelControl34.TabIndex = 3;
+            this.labelControl34.Text = "Pregunta:";
+            // 
+            // labelControl35
+            // 
+            this.labelControl35.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.labelControl35.Appearance.Options.UseFont = true;
+            this.labelControl35.Location = new System.Drawing.Point(36, 82);
+            this.labelControl35.Name = "labelControl35";
+            this.labelControl35.Size = new System.Drawing.Size(75, 17);
+            this.labelControl35.TabIndex = 2;
+            this.labelControl35.Text = "Contraseña:";
+            // 
+            // labelControl36
+            // 
+            this.labelControl36.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.labelControl36.Appearance.Options.UseFont = true;
+            this.labelControl36.Location = new System.Drawing.Point(61, 36);
+            this.labelControl36.Name = "labelControl36";
+            this.labelControl36.Size = new System.Drawing.Size(50, 17);
+            this.labelControl36.TabIndex = 0;
+            this.labelControl36.Text = "Usuario:";
             // 
             // tabProductos
             // 
@@ -458,11 +768,6 @@
             // gdcProductos
             // 
             this.gdcProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
-            gridLevelNode2.RelationName = "Level2";
-            this.gdcProductos.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2});
             this.gdcProductos.Location = new System.Drawing.Point(0, 0);
             this.gdcProductos.MainView = this.gdvProductos;
             this.gdcProductos.MenuManager = this.ribbon;
@@ -670,6 +975,9 @@
             this.txtCodigoBarra.Name = "txtCodigoBarra";
             this.txtCodigoBarra.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.txtCodigoBarra.Properties.Appearance.Options.UseFont = true;
+            this.txtCodigoBarra.Properties.Mask.BeepOnError = true;
+            this.txtCodigoBarra.Properties.Mask.EditMask = "d";
+            this.txtCodigoBarra.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtCodigoBarra.Size = new System.Drawing.Size(320, 24);
             this.txtCodigoBarra.TabIndex = 1;
             // 
@@ -1258,6 +1566,25 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.XtraTabVentanas)).EndInit();
             this.XtraTabVentanas.ResumeLayout(false);
+            this.tabUsuarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gpcUsuarios)).EndInit();
+            this.gpcUsuarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gdcUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
+            this.panelControl6.ResumeLayout(false);
+            this.panelControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.petFotoUsuario.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petVerContrasena.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxPrivilegio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRespuesta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPregunta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRContrasena.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             this.tabProductos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gpcProductos)).EndInit();
             this.gpcProductos.ResumeLayout(false);
@@ -1412,5 +1739,28 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit11;
         private DevExpress.XtraEditors.SimpleButton btnAgregarProveedor;
+        private DevExpress.XtraEditors.GroupControl gpcUsuarios;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraGrid.GridControl gdcUsuarios;
+        private DevExpress.XtraGrid.Views.Grid.GridView gdvUsuarios;
+        private DevExpress.XtraEditors.PanelControl panelControl6;
+        private DevExpress.XtraEditors.SimpleButton btnCancelarUsuarios;
+        private DevExpress.XtraEditors.SimpleButton btnAgregarUsuarios;
+        private DevExpress.XtraEditors.LabelControl labelControl30;
+        private DevExpress.XtraEditors.LabelControl labelControl31;
+        private DevExpress.XtraEditors.LabelControl labelControl32;
+        private DevExpress.XtraEditors.LabelControl labelControl33;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
+        private DevExpress.XtraEditors.LabelControl labelControl35;
+        private DevExpress.XtraEditors.LabelControl labelControl36;
+        private DevExpress.XtraEditors.TextEdit txtRespuesta;
+        private DevExpress.XtraEditors.TextEdit txtPregunta;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
+        private DevExpress.XtraEditors.TextEdit txtRContrasena;
+        private DevExpress.XtraEditors.TextEdit txtContrasena;
+        private DevExpress.XtraEditors.TextEdit txtUsuario;
+        private DevExpress.XtraEditors.PictureEdit petVerContrasena;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxPrivilegio;
+        private DevExpress.XtraEditors.PictureEdit petFotoUsuario;
     }
 }
