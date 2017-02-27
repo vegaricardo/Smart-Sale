@@ -542,6 +542,7 @@
             this.petFotoUsuario.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.petFotoUsuario.Properties.Appearance.Options.UseBackColor = true;
             this.petFotoUsuario.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.petFotoUsuario.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.petFotoUsuario.Properties.ZoomAccelerationFactor = 1D;
             this.petFotoUsuario.Size = new System.Drawing.Size(100, 128);
             this.petFotoUsuario.TabIndex = 24;
@@ -654,6 +655,7 @@
             this.btnCancelarUsuarios.Size = new System.Drawing.Size(112, 52);
             this.btnCancelarUsuarios.TabIndex = 15;
             this.btnCancelarUsuarios.Text = "Cancelar";
+            this.btnCancelarUsuarios.Click += new System.EventHandler(this.btnCancelarUsuarios_Click);
             // 
             // btnAgregarUsuarios
             // 

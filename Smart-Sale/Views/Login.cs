@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Diagnostics;
+using Smart_Sale.Controller;
 
 namespace Smart_Sale.Views
 {
@@ -18,6 +19,8 @@ namespace Smart_Sale.Views
         {
             InitializeComponent();
         }
+
+        MainBridge llamarMainBridge = new MainBridge();
 
         private void petVerContrasena_MouseDown(object sender, MouseEventArgs e)
         {
@@ -39,6 +42,19 @@ namespace Smart_Sale.Views
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
+            if (txtUsuario.Text == "" || txtContrasena.Text == "" )
+            {
+                // mensaje de que falta me quede en el minuto 44:28 del video 9
+            }
+            else
+            {
+                if (true)
+                {
+
+                }
+            }
+
+
             MainView llamarMainView = new MainView();
             llamarMainView.Show();
             Hide();

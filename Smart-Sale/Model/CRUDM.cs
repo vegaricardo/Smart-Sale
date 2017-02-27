@@ -54,6 +54,60 @@ namespace Smart_Sale.Model
             }
         }
 
+
+        #region Acceso
+
+        public bool verificarAcceso(string usuario, string contrasena)
+        {
+            try
+            {
+                using (cnn = new FbConnection(cadenaConexion))
+                {
+                    string query = "SELECT IDU, Correo, Privilegio FROM Usuarios WHERE Usuario = @usuario AND Contrasena = @contrasena ";
+
+                    cnn.Open();
+
+                    cmd = new FbCommand(query, cnn);
+
+                    cmd.Parameters.AddWithValue("@usiario", Encriptar(usuario, new SHA512CryptoServiceProvider()));
+                    cmd.Parameters.AddWithValue("@contrasena", Encriptar(contrasena, new SHA512CryptoServiceProvider()));
+
+                    lector = cmd.ExecuteReader();
+
+                    string[] datos = new string[3];
+
+                    while (lector.Read())
+                    {
+                        datos[0] = lector[0].ToString();//Va alamcenar el IDU
+                        datos[1] = lector[1].ToString();//Va almacenar Correo
+                        datos[3] = lector[2].ToString();//Va alamcenar Privilrgio
+                    }
+
+                    lector.Close();
+
+                    if (datos[0] == null || string.IsNullOrEmpty(datos[0])) 
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                //falta mensaje
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+
+        }
+
+        #endregion
+
+
         // objetos con que realizamos la conecxion a la bd
         #region CRUD Productos
 
@@ -201,8 +255,10 @@ namespace Smart_Sale.Model
         }
 
         #endregion//No haremos el codigo de smartclean porque vitor lo elimino se hizo mole
+
         //Tampoco haremos el boton de eliminar el departamentos y proveedores
         //haremos el metodo crud directamente en el model por que vitor se equivoca a cada rato.
+
         #region Ajustes
         public void leerProveedoresListBox(ListBoxControl aRellenar)
         {
@@ -401,11 +457,11 @@ namespace Smart_Sale.Model
         {
             try
             {
+                int id = obtenerUltimoUsuario();
+
                 using (cnn = new FbConnection(cadenaConexion))
                 {
                     string query = "INSERT INTO Usuarios VALUES(@id, @usuario, @contrasena, @correo, @pregunta, @respuesta, @privilegio, @foto)";
-
-                    int id = obtenerUltimoUsuario();
 
                     cnn.Open();
 
@@ -441,14 +497,16 @@ namespace Smart_Sale.Model
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+
+
                 //falta mensaje
                 DialogResult resul = llamarErrors.errorAltaProductoCritico();
 
                 if (resul == DialogResult.Retry)
                 {
-                    altaUsuario( usuario, contrasena, correo, pregunta, respuesta, privilegio, foto);
+                    altaUsuario(usuario, contrasena, correo, pregunta, respuesta, privilegio, foto);
                 }
 
                 return false;
@@ -488,6 +546,8 @@ namespace Smart_Sale.Model
                     {
                         ncodigo = Convert.ToInt32(codigo) + 1;
                     }
+
+
                     return ncodigo;
                 }
             }

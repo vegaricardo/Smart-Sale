@@ -217,9 +217,26 @@ namespace Smart_Sale.Views
 
 
             llamarMainBridge.leerProductos(gdcProductos);
+
+            txtCodigoBarra.Focus();
         }
 
+        private void restaurarUsuarios()
+        {
+            txtUsuario.Text = "";
+            txtContrasena.Text = "";
+            txtRContrasena.Text = "";
+            txtEmail.Text = "";
+            txtPregunta.Text = "";
+            txtRespuesta.Text = "";
+            cbxPrivilegio.SelectedIndex = 0;
+            petFotoUsuario.Image = null;
 
+            llamarMainBridge.leerUsuarios(gdcUsuarios);
+
+            txtUsuario.Focus();
+
+        }
 
         #endregion
 
@@ -253,6 +270,8 @@ namespace Smart_Sale.Views
                         //reajustar
                         llamarMainBridge.leerUsuarios(gdcUsuarios);
                         XtraMessageBox.Show(UserLookAndFeel.Default, "Si se clavo en la base de datos");
+
+                        restaurarUsuarios();
                     }
                 }
             }
@@ -260,6 +279,11 @@ namespace Smart_Sale.Views
             {
                 //nos falta mensaje porque vitor tenia sueño
             }
+        }
+
+        private void btnCancelarUsuarios_Click(object sender, EventArgs e)
+        {
+            restaurarUsuarios();
         }
     }
 }

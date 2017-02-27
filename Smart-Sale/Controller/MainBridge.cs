@@ -39,6 +39,14 @@ namespace Smart_Sale.Controller// 58:38:56
             return datos;
         }
 
+        #region
+        public bool verificarAcceso(string usuario, string contrasena)
+        {
+            return llamarCRUDM.verificarAcceso(usuario, contrasena);
+        }
+
+        #endregion
+
         #region CRUD Productos
 
         public void leerProductos(GridControl aRellenar)
